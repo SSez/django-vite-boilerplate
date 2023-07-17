@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}" />
+    <title>Document</title>
+
+    {% if debug %}
+    <script type="module" src="http://localhost:3000/@vite/client"></script>
+
+    <!-- Use this only if using React -->
+    <script type="module">
+        import RefreshRuntime from 'http://localhost:3000/@react-refresh'
+        RefreshRuntime.injectIntoGlobalHook(window)
+        window.$RefreshReg$ = () => { }
+        window.$RefreshSig$ = () => (type) => type
+        window.__vite_plugin_react_preamble_installed__ = true
+    </script>
+
+    <!-- <script type="module" src="http://localhost:3000/src/main.tsx"></script> --> <!-- vite react-ts -->
+    <!-- <script type="module" src="http://localhost:3000/src/main.jsx"></script> --> <!-- vite react -->
+
+    <!-- vite vue & vite svelte -->
+    <!-- <script type="module" src="http://localhost:3000/src/main.js"></script> -->
+
+    <!-- vite vue-ts & vite svelte-ts -->
+    <!-- <script type="module" src="http://localhost:3000/src/main.ts"></script> -->
+
+    <script type="module" src="http://localhost:3000/src/main.tsx"></script> <!-- vite react-ts -->
+
+    {% else %}
+    <script type="module" crossorigin src="{% static 'vite/index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'vite/index.css' %}">
+    {% endif %}
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+</html>
