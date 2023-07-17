@@ -18,8 +18,6 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ASD = True
-
 ALLOWED_HOSTS = ["*"] # DO NOT USE THIS IN PRODUCTION!
 
 # Application definition
